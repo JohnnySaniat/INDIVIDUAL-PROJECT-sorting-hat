@@ -1,3 +1,67 @@
 body {
-  background-color: chartreuse;
+  background-color: whitesmoke;
+}
+
+#appContainer {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  font-family: 'Irish Grover', cursive;
+}
+
+#containerOne {
+  flex-basis: 100%;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  background-color: rgb(192, 192, 192);
+  border-style: dashed;
+  border-color: black;
+  padding: 20px;
+  margin: 20px;
+}
+
+#buttonContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 5;
+
+
+}
+
+#containerTwo {
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: 49%;
+  height: fit-content;
+  width: fit-content;
+  border-style: dashed;
+  border-color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+#containerThree {
+  flex-basis: 49%;
+  flex-wrap: wrap;
+  height: 450px;
+  width: 450px;
+  border-style: dashed;
+  border-color: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.card {
+  flex-direction: row;
+  font-family: 'Irish Grover', cursive;
+  flex-basis: 100%;
+
+}
+
+.card img {
+  width: 30%
 }
