@@ -3,33 +3,74 @@ const students = [
     id: 1,
     name: "Testy McTestface",
     house: "Gryffindor",
-    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg"
+    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg",
+    enrolled: true,
   },
   
   {
     id: 2,
     name: "Dusty Dingus",
     house: "Hufflepuff",
-    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg"
+    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg",
+    enrolled: true,
   },
 
   {
     id: 3,
     name: "Greeby",
     house: "Ravenclaw",
-    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg"
+    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg",
+    enrolled: true,
   },
 
   {
     id: 4,
     name: "Mario",
     house: "Slytherin",
-    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg"
+    imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg",
+    enrolled: true,
   }
 
-]
+];
+
+const houses = {
+  houseOne: "Gryffindor",
+  houseTwo: "Hufflepuff",
+  houseThree: "Ravenclaw",
+  houseFour: "Slytherin",
+
+
+};
+
+function getRandomValue(obj) {
+  const values = Object.values(obj);
+
+  return values[Math.floor(Math.random() * values.length)];
+
+}
+
+function assignImage() {
+  let image = "";
+  if (Object.values(houses) === "Gryffindor") {
+    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg"
+  }
+  else if (Object.values(houses) === "Hufflepuff") {
+    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg"
+  }
+  else if (Object.values(houses) === "Ravenclaw") {
+    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg"
+  }
+  else if (Object.values(houses) === "Slytherin") {
+    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg"
+  }
+
+  return image;
+
+  console.log(assignImage(houses))
+}
 
 const targetingApp = document.querySelector("#app");
+const voldsArmy = document.querySelector("#vold")
 
 const renderToDom = (divId, html) => {
   const targetedDiv = document.querySelector(divId)
@@ -42,7 +83,7 @@ const cardsOnDom = (array) => {
   for (const sort of array) {
     domString += 
     `<div class="card" style="width: 18rem;">
-  <img src=${sort.imageUrl} class="card-img-top" alt="Gryffindor Flag">
+  <img src=${sort.imageUrl} class="card-img-top" id="flag-image" alt="House Flag">
   <div class="card-body">
     <h5 class="card-title">${sort.name}</h5>
     <p class="card-text">${sort.house}</p>
@@ -57,6 +98,8 @@ const cardsOnDom = (array) => {
 };
 
 cardsOnDom(students);
+
+
 
 const filterContainer = document.querySelector("#buttonContainer")
 const filterStudentsByHouse = (house) => {
@@ -98,8 +141,8 @@ const houseForm = () => {
   domString += 
   `<form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Enter a Name to be Sorted</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name muggle">
+    <label for="name">Enter a Name to be Sorted</label>
+    <input type="text" class="form-control" id="name" aria-describedby="name entry" placeholder="Enter your name muggle">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -121,9 +164,10 @@ const createStudent = (e) => {
 
   const studentObj = {
     id: students.length + 1,
-    name: "Kevin",
-    house: "test",
-    imageUrl: "https://i.etsystatic.com/30613184/r/il/e69e51/4128966168/il_fullxfull.4128966168_t3bo.jpg"
+    name: document.querySelector("#name").value,
+    house: getRandomValue(houses),
+    imageUrl: "https://img.freepik.com/free-vector/neon-style-coming-soon-glowing-background-design_1017-25516.jpg",
+    enrolled: true,
   }
 
   console.log(studentObj);
@@ -135,6 +179,7 @@ const createStudent = (e) => {
 form.addEventListener("submit", createStudent);
 
 const app = document.querySelector("#app");
+const vold = document.querySelector("#vold")
 
 app.addEventListener("click", (e) => {
   if (e.target.id.includes("expel-btn")) {
@@ -143,4 +188,6 @@ app.addEventListener("click", (e) => {
     students.splice(index, 1);
     cardsOnDom(students);
   }
+  
+
 });
