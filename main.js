@@ -2,7 +2,7 @@ const students = [
   
   {
     id: 1,
-    name: "Testy McTestface",
+    name: "Testy Testface",
     house: "Gryffindor",
     imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg",
     enrolled: true,

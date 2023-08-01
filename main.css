@@ -11,7 +11,9 @@ body {
 }
 
 button {
-  padding: 10px
+  padding: 10px;
+  margin: 20px;
+  color: black;
 }
 
 h1{
@@ -20,7 +22,7 @@ h1{
 
 #containerOne {
   flex-basis: 100%;
-  height: 300px;
+  height: 420px;
   width: 500px;
   margin: auto;
   border-style: solid;
@@ -47,7 +49,6 @@ h1{
   display: flex;
   flex-basis: auto;
   flex-wrap: wrap;
-  justify-content: center;
   flex-basis: 49%;
   height: fit-content;
   width: fit-content;
@@ -83,13 +84,34 @@ h1{
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.card {
+div.card {
   flex-direction: row;
+  justify-content: center;
   font-family: 'Irish Grover', cursive;
-  flex-basis: 100%;
+  font-size: 20px;
 
 }
 
 .card img {
-  width: 30%
+  width: 30%;
+  height: fit-content;
+  width: fit-content;
+}
+
+div#containerTwo.container {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+div.card-body {
+  background-image: url("https://i.etsystatic.com/23853922/r/il/509ee1/2375143714/il_570xN.2375143714_fq3u.jpg");
+  image-orientation: 400turn;
+  color: black;
+  font-size: 24px;
+}
+
+img#flag-image.card-img-top {
+  height: 100px;
+  width: 100px;
 }
