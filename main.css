@@ -7,7 +7,7 @@ body {
   display: flex;
   text-align: center;
   flex-wrap: wrap;
-  font-family: 'Irish Grover', cursive;
+  font-family: "Irish Grover", cursive;
 }
 
 button {
@@ -16,7 +16,7 @@ button {
   color: black;
 }
 
-h1{
+h1 {
   font-size: 42px;
 }
 
@@ -30,11 +30,11 @@ h1{
   padding: 20px;
   margin: 20px;
   background: rgba(4, 87, 25, 0.45);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 18px );
-  -webkit-backdrop-filter: blur( 13px );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #buttonContainer {
@@ -42,7 +42,6 @@ h1{
   text-align: center;
   justify-content: center;
   flex-grow: 5;
-
 }
 
 #containerTwo {
@@ -57,11 +56,11 @@ h1{
   padding: 5px;
   margin: 5px;
   background: rgba(4, 87, 25, 0.45);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 18px );
-  -webkit-backdrop-filter: blur( 13px );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #containerThree {
@@ -77,19 +76,18 @@ h1{
   padding: 5px;
   margin: 5px;
   background: rgba(4, 87, 25, 0.45);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 18px );
-  -webkit-backdrop-filter: blur( 13px );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(13px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 div.card {
   flex-direction: row;
   justify-content: center;
-  font-family: 'Irish Grover', cursive;
+  font-family: "Irish Grover", cursive;
   font-size: 20px;
-
 }
 
 .card img {
@@ -101,7 +99,6 @@ div.card {
 div#containerTwo.container {
   display: flex;
   justify-content: space-around;
-
 }
 
 div.card-body {
