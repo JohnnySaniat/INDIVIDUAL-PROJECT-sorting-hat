@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  background-image: url("https://cdn.europosters.eu/image/750/wall-murals/harry-potter-charming-vintage-i114444.jpg");
 }
 
 #appContainer {
@@ -9,16 +10,29 @@ body {
   font-family: 'Irish Grover', cursive;
 }
 
+button {
+  padding: 10px
+}
+
+h1{
+  font-size: 42px;
+}
+
 #containerOne {
   flex-basis: 100%;
-  height: 500px;
+  height: 300px;
   width: 500px;
   margin: auto;
-  background-color: rgb(192, 192, 192);
   border-style: solid;
   border-color: black;
   padding: 20px;
   margin: 20px;
+  background: rgba(4, 87, 25, 0.45);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 13px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #buttonContainer {
@@ -39,9 +53,14 @@ body {
   width: fit-content;
   border-style: solid;
   border-color: black;
-  background-color: rgb(192, 192, 192);
   padding: 5px;
   margin: 5px;
+  background: rgba(4, 87, 25, 0.45);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 13px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #containerThree {
@@ -54,9 +73,14 @@ body {
   width: fit-content;
   border-style: solid;
   border-color: black;
-  background-color: rgb(192, 192, 192);
   padding: 5px;
   margin: 5px;
+  background: rgba(4, 87, 25, 0.45);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 18px );
+  -webkit-backdrop-filter: blur( 13px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .card {

@@ -1,4 +1,5 @@
 const students = [
+  
   {
     id: 1,
     name: "Testy McTestface",
@@ -29,9 +30,11 @@ const students = [
     house: "Slytherin",
     imageUrl: "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg",
     enrolled: true,
-  }
+  },
 
 ];
+
+//defining houses for randomization
 
 const houses = {
   houseOne: "Gryffindor",
@@ -39,22 +42,24 @@ const houses = {
   houseThree: "Ravenclaw",
   houseFour: "Slytherin",
 
-
 };
+
+//utilizing getRandomValue() and integrating Math.floor and Math.random multiplied by the values length to assign a random house 
 
 function getRandomValue(obj) {
   const values = Object.values(obj);
-
   return values[Math.floor(Math.random() * values.length)];
 
-}
+};
 
-const targetingApp = document.querySelector("#app");
+//setting up my renderToDom function with the two parameters being the div that is targeted and the HTML
 
 const renderToDom = (divId, html) => {
   const targetedDiv = document.querySelector(divId)
   targetedDiv.innerHTML = html
 };
+
+//creating a cardsOnDom function to iterate the students variable (an array of objects) utilizing a for loop
 
 const cardsOnDom = (array) => {
   let domString = "";
@@ -71,13 +76,32 @@ const cardsOnDom = (array) => {
 </div>`
 
   }
-
   renderToDom("#app", domString);
+
+};
+
+//building the cards for students who are expelled (targeting the noNose div within the third container)
+
+  const banned = () => {
+    let domString = ""; {
+      domString += 
+      `<div class="card" style="width: 18rem;">
+    <img src="https://qph.cf2.quoracdn.net/main-qimg-2dde27ae8e8aa3b0b3eaafa8c55e05c3-pjlq" class="card-img-top" id="flag-image" alt="House Flag">
+    <div class="card-body">
+      <h5 class="card-title">Big Bad No Nose Gobbled up</h5>
+      <p class="card-text">Boot</p>
+    </div>
+  </div>`
+  
+    }
+  
+    renderToDom("#noNose", domString);
 
 };
 
 cardsOnDom(students);
 
+//creating my filters by targeting my button container and utilizing .filter and a switch
 
 const filterContainer = document.querySelector("#buttonContainer")
 const filterStudentsByHouse = (house) => {
@@ -106,6 +130,8 @@ filterContainer.addEventListener("click", (e) => {
   }
 })
 
+//creating my form variable and integrating the form into container one
+
 const sortForm = document.querySelector ("#containerOne");
 
 sortForm.addEventListener("click", (e) => {
@@ -119,7 +145,6 @@ const houseForm = () => {
   domString += 
   `<form>
   <div class="form-group">
-    <label for="name">Enter a Name to be Sorted</label>
     <input type="text" class="form-control" id="name" aria-describedby="name entry" placeholder="Enter your name muggle">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -129,11 +154,15 @@ const houseForm = () => {
 renderToDom("#sortForm", domString)
 };
 
+//linking in the show form btn
+
 const showForm = document.querySelector("#show-form-btn");
 
 showForm.addEventListener("click", (e) => {
   houseForm();
 })
+
+//pushing a new student to the array and adding in preventDefault so that the form does not refresh and lose the cache
 
 const form = document.querySelector("form");
 
@@ -158,14 +187,20 @@ const createStudent = (e) => {
 
 form.addEventListener("submit", createStudent);
 
+//targeting the expel button on the individual cards to splice the array and move the object to an empty array in my noNose div (accessing the banned cards I created)
+
 const app = document.querySelector("#app");
+const noNose = [];
 
 app.addEventListener("click", (e) => {
   if (e.target.id.includes("expel-btn")) {
     const [, id] = e.target.id.split("--");
-    const index = students.findIndex((student) => student.id === Number (id));
-    students.splice(index, 1)
+    const index = students.findIndex((student) => student.id === Number(id));
+    let goodbye = students.splice(index, 1)[0];
+    noNose.push(goodbye);
     cardsOnDom(students);
+    banned(goodbye);
+    
   }
   
 
