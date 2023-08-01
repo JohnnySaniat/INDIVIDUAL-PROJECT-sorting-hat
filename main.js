@@ -49,28 +49,7 @@ function getRandomValue(obj) {
 
 }
 
-function assignImage() {
-  let image = "";
-  if (Object.values(houses) === "Gryffindor") {
-    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg"
-  }
-  else if (Object.values(houses) === "Hufflepuff") {
-    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg"
-  }
-  else if (Object.values(houses) === "Ravenclaw") {
-    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg"
-  }
-  else if (Object.values(houses) === "Slytherin") {
-    image = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg"
-  }
-
-  return image;
-
-  console.log(assignImage(houses))
-}
-
 const targetingApp = document.querySelector("#app");
-const voldsArmy = document.querySelector("#vold")
 
 const renderToDom = (divId, html) => {
   const targetedDiv = document.querySelector(divId)
@@ -100,7 +79,6 @@ const cardsOnDom = (array) => {
 cardsOnDom(students);
 
 
-
 const filterContainer = document.querySelector("#buttonContainer")
 const filterStudentsByHouse = (house) => {
   const filteredStudents = students.filter((students) => students.house === house);
@@ -128,7 +106,7 @@ filterContainer.addEventListener("click", (e) => {
   }
 })
 
-const sortForm = document.querySelector ("#containerOne")
+const sortForm = document.querySelector ("#containerOne");
 
 sortForm.addEventListener("click", (e) => {
   console.log("Test")
@@ -174,18 +152,19 @@ const createStudent = (e) => {
   students.push(studentObj);
   cardsOnDom(students);
   form.reset();
+
+  console.log(studentObj);
 };
 
 form.addEventListener("submit", createStudent);
 
 const app = document.querySelector("#app");
-const vold = document.querySelector("#vold")
 
 app.addEventListener("click", (e) => {
   if (e.target.id.includes("expel-btn")) {
     const [, id] = e.target.id.split("--");
     const index = students.findIndex((student) => student.id === Number (id));
-    students.splice(index, 1);
+    students.splice(index, 1)
     cardsOnDom(students);
   }
   
