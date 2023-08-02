@@ -8,10 +8,11 @@ body {
   text-align: center;
   flex-wrap: wrap;
   font-family: "Irish Grover", cursive;
+  color: aliceblue;
 }
 
 button {
-  padding: 10px;
+  padding: 20px;
   margin: 20px;
   color: black;
 }
@@ -22,7 +23,7 @@ h1 {
 
 #containerOne {
   flex-basis: 100%;
-  height: 420px;
+  height: 450px;
   width: 500px;
   margin: auto;
   border-style: solid;
@@ -84,10 +85,13 @@ h1 {
 }
 
 div.card {
+  display: inline-block;
   flex-direction: row;
   justify-content: center;
   font-family: "Irish Grover", cursive;
-  font-size: 20px;
+  font-size: 35px;
+  background: transparent;
+  border: transparent;
 }
 
 .card img {
@@ -102,13 +106,18 @@ div#containerTwo.container {
 }
 
 div.card-body {
-  background-image: url("https://i.etsystatic.com/23853922/r/il/509ee1/2375143714/il_570xN.2375143714_fq3u.jpg");
   image-orientation: 400turn;
-  color: black;
-  font-size: 24px;
+  font-size: 40px;
+  
+  
 }
 
 img#flag-image.card-img-top {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 125px;
+}
+
+h5.card-title {
+  font-size: 35px;
+  color: aliceblue;
 }

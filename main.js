@@ -6,8 +6,7 @@ const students = [
     name: "Testy Testface",
     house: "Gryffindor",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg",
-    imageUrl2: "https://f4.bcbits.com/img/a2976225257_65",
+      "https://www.seekpng.com/png/full/146-1467623_crest-transparent-gryffindor-house-harry-potter-house-logos.png",
     enrolled: true,
   },
 
@@ -16,8 +15,7 @@ const students = [
     name: "Dusty Dingus",
     house: "Hufflepuff",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg",
-    imageUrl2: "https://f4.bcbits.com/img/a2976225257_65",
+      "https://www.seekpng.com/png/full/146-1468194_harry-potter-hufflepuff-crest-kids-shirt-ages-sons.png",
     enrolled: true,
   },
 
@@ -26,8 +24,7 @@ const students = [
     name: "Greeby",
     house: "Ravenclaw",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg",
-    imageUrl2: "https://f4.bcbits.com/img/a2976225257_65",
+      "https://www.seekpng.com/png/full/184-1840811_ravenclaw-crest-harry-potter-harry-potter-ravenclaw-house.png",
     enrolled: true,
   },
 
@@ -36,8 +33,7 @@ const students = [
     name: "Mario",
     house: "Slytherin",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg",
-    imageUrl2: "https://f4.bcbits.com/img/a2976225257_65",
+      "https://www.seekpng.com/png/full/226-2269088_photo-harry-potter-mug-slytherin-crest.png",
     enrolled: true,
   },
 ];
@@ -52,22 +48,22 @@ const houses = [
   {
     id: "Gryffindor",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-gryffindor-pattern-4-black-gryphon.jpg",
+      "https://www.seekpng.com/png/full/146-1467623_crest-transparent-gryffindor-house-harry-potter-house-logos.png",
   },
   {
     id: "Hufflepuff",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-hufflepuff-pattern-2-black-gryphon.jpg",
+      "https://www.seekpng.com/png/full/146-1468194_harry-potter-hufflepuff-crest-kids-shirt-ages-sons.png",
   },
   {
     id: "Ravenclaw",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-ravenclaw-pattern-2-black-gryphon.jpg",
+      "https://www.seekpng.com/png/full/184-1840811_ravenclaw-crest-harry-potter-harry-potter-ravenclaw-house.png",
   },
   {
     id: "Slytherin",
     imageUrl:
-      "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/hogwarts-slytherin-pattern-4-black-gryphon.jpg",
+      "https://www.seekpng.com/png/full/226-2269088_photo-harry-potter-mug-slytherin-crest.png",
   },
 ];
 
@@ -88,7 +84,7 @@ let cardsOnDom = (array) => {
   <img src=${sort.imageUrl} class="card-img-top" id="flag-image" alt="House Flag">
   <div class="card-body">
     <h5 class="card-title">${sort.name}</h5>
-    <p class="card-text">${sort.house}</p>
+    <p class="card-text"></p>
     <a href="#" class="btn btn-primary" id="expel-btn--${sort.id}">EXPEL</a>
   </div>
 </div>`;
@@ -105,7 +101,7 @@ let baddiesOnDom = (array) => {
 
   for (const sort of array) {
     domString += `<div class="card" style="width: 18rem;">
-  <img src="https://f4.bcbits.com/img/a2976225257_65" class="card-img-top" id="flag-image" alt="voldy">
+  <img src="https://www.seekpng.com/png/full/297-2970893_imgenes-para-photoscape-photoshop-y-gimp-de-mascara.png" class="card-img-top" id="flag-image" alt="voldy">
   <div class="card-body">
     <h5 class="card-title">${sort.name} but Evil</h5>
   </div>
